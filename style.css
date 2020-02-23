@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/*-------------------------------------------------
+ショートコードスタイル
+-------------------------------------------------*/
+
+/* リストボックス */
+.list-box {
+  border-top: solid 4px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  background-color: #F8F9FA;
+}
+.list-box-title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.list-box ul,
+.list-box ol {
+  padding: 0 2rem;
+  list-style-type: none;
+}
+.list-box ul li,
+.list-box ol li {
+  line-height: 1.5;
+  padding: 0.5rem 0;
+  border-bottom: dashed 1px #ccc;
+}
+.list-box.box--green .list-box-title {
+  color: #32BCB9;
+}
+.list-box.box--blue .list-box-title {
+  color: #6CBCDF;
+}
+.list-box.box--pink .list-box-title {
+  color: #FFA9B8;
+}
+.list-box.box--orange .list-box-title {
+  color: #FB8971;
+}
+
+/* メモボックス */
+.memo-box {
+  background: #EFF1F5;
+  border: solid 2px #546e7a;
+  border-radius: 5px;
+}
+.memo-box p {
+  margin: 0;
+}
+.memo-box-title {
+  font-family: 'Montserrat';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.memo-box-title:before {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  text-align: center;
+  vertical-align: middle;
+  content: "\f303";
+}
+.memo-box.box--green .memo-box-title,
+.memo-box.box--green .memo-box-title:before {
+  color: #32BCB9;
+}
+.memo-box.box--blue .memo-box-title,
+.memo-box.box--blue .memo-box-title:before {
+  color: #6CBCDF;
+}
+.memo-box.box--pink .memo-box-title,
+.memo-box.box--pink .memo-box-title:before {
+  color: #FFA9B8;
+}
+.memo-box.box--orange .memo-box-title,
+.memo-box.box--orange .memo-box-title:before {
+  color: #FB8971;
+}
+
+/* アラートボックス */
+.memo-box.alert {
+  background: #ffebeb;
+  border: solid 2px #ff8376;
+  border-radius: 0;
+}
+.memo-box.alert .memo-box-title {
+  color: #ff8376;
+}
+.memo-box.alert .memo-box-title:before {
+  content: "\f06a";
+  font-size: 1.5rem;
+  vertical-align: top;
+}
+
+/* 参考サイト */
+.reference-site {
+  background-color: #EFF1F5;
+  border-radius: 5px;
+  border-bottom: solid 3px rgba(0, 0, 0, 0.27);
+}
+.reference-site a,
+.reference-site a:hover {
+  color: #546e7a;
+  text-decoration: none;
+}
+.reference-site p {
+  margin: 0;
+  padding: 0;
+}
+.reference-site p:not(.reference-title) {
+  font-size: 0.8rem;
+}
+.reference-site .fa-bookmark {
+  font-size: 1.5rem;
+  color: #77c0c9;
+}
