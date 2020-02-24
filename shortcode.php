@@ -4,6 +4,7 @@ Plugin Name: AZAMI Shortcode
 Plugin URI: https://github.com/TurtleBuild/azami-shortcode
 Description: WordPressテーマ「AZAMI」用のショートコードです。
 Author: Masahiro Kasatani
+Version: 1.0
 License: GPLv2
 -------------------------------------------------*/
 
