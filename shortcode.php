@@ -4,7 +4,7 @@ Plugin Name: AZAMI Shortcode
 Plugin URI: https://github.com/TurtleBuild/azami-shortcode
 Description: WordPressテーマ「AZAMI」用のショートコードです。
 Author: Masahiro Kasatani
-Version: 1.0
+Version: 1.0.1
 License: GPLv2
 -------------------------------------------------*/
 
@@ -25,6 +25,8 @@ add_shortcode('col', 'azami_column');
 add_shortcode('grid', 'azami_grid');
 add_shortcode('reference', 'azami_reference_site');
 add_shortcode('card', 'azami_card');
+add_shortcode('balloon_left', 'azami_balloon_left');
+add_shortcode('balloon_right', 'azami_balloon_right');
 
 /*-------------------------------------------------
 YouTubeをレスポンシブで挿入
@@ -202,6 +204,64 @@ EOF;
       } //endforeach
     } else { $output = '記事IDを正しく入力してください'; }
     return $output;
+  }
+}
+
+/*-------------------------------------------------
+吹き出し（左）
+-------------------------------------------------*/
+if ( !function_exists('azami_balloon_left') ) {
+  function azami_balloon_left($atts, $content = null)
+  {
+    $url = isset($atts['url']) ? esc_url($atts['url']) : null;
+    if ($url && $content) { // URLと文章がある場合のみ出力
+        $output = <<<EOF
+<div class="row mb-4">
+  <div class="col-9 col-md-10">
+    <div class="comment-content ml-auto">
+      <div class="comment-balloon comment-balloon--left">
+        <small>{$content}</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 col-md-2 text-center">
+    <img src="{$url}" alt="" class="d-block m-auto align-top rounded-circle" />
+  </div>
+</div>
+EOF;
+      return $output;
+    } else {
+      return '<span class="red">吹き出しの画像URLと文章を入力してください</span>';
+    }
+  }
+}
+
+/*-------------------------------------------------
+吹き出し（右）
+-------------------------------------------------*/
+if ( !function_exists('azami_balloon_right') ) {
+  function azami_balloon_right($atts, $content = null)
+  {
+    $url = isset($atts['url']) ? esc_url($atts['url']) : null;
+    if ($url && $content) { // URLと文章がある場合のみ出力
+        $output = <<<EOF
+<div class="row mb-4">
+  <div class="col-3 col-md-2 text-center">
+    <img src="{$url}" alt="" class="d-block m-auto align-top rounded-circle" />
+  </div>
+  <div class="col-9 col-md-10">
+    <div class="comment-content">
+      <div class="comment-balloon comment-balloon--right">
+        <small>{$content}</small>
+      </div>
+    </div>
+  </div>
+</div>
+EOF;
+      return $output;
+    } else {
+      return '<span class="red">吹き出しの画像URLと文章を入力してください</span>';
+    }
   }
 }
 
